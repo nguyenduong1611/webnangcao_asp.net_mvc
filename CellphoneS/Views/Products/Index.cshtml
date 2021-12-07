@@ -1,0 +1,168 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{int idcf; }
+@using CellphoneS.Models.EF;
+@model SanPham
+@section Jquery
+{
+    <script type="text/javascript">
+        var temp = "";
+        function getid(clicked_id) {
+            temp = clicked_id;
+            var text = '<a id="re" class="btn btn-warning" href="#">Mua Ngay</a>';
+            text = text.replace("temp", temp)
+            $('#but').replaceWith(text);
+
+        }
+        function noti() {
+            txt = 'Chọn Cấu Hình'
+            alert(txt);
+        };
+
+            $(window).load(function () {
+                $("#flexiselDemo1").flexisel();
+                $("#flexiselDemo2").flexisel({
+                    enableResponsiveBreakpoints: true,
+                    responsiveBreakpoints: {
+                        portrait: {
+                            changePoint: 480,
+                            visibleItems: 1
+                        },
+                        landscape: {
+                            changePoint: 640,
+                            visibleItems: 2
+                        },
+                        tablet: {
+                            changePoint: 768,
+                            visibleItems: 3
+                        }
+                    }
+                });
+
+                $("#flexiselDemo3").flexisel({
+                    visibleItems: 5,
+                    animationSpeed: 1000,
+                    autoPlay: true,
+                    autoPlaySpeed: 3000,
+                    pauseOnHover: true,
+                    enableResponsiveBreakpoints: true,
+                    responsiveBreakpoints: {
+                        portrait: {
+                            changePoint: 480,
+                            visibleItems: 1
+                        },
+                        landscape: {
+                            changePoint: 640,
+                            visibleItems: 2
+                        },
+                        tablet: {
+                            changePoint: 768,
+                            visibleItems: 3
+                        }
+                    }
+                });
+
+            });
+
+
+    </script>
+    <script type="text/javascript" src="~/assets/Client/js/jquery.flexisel.js"></script>
+}
+<div class="single">
+    <div class="wrap">
+        <div class="row">
+            <div class="labout span_1_of_a1 col-xs-12 col-md-5" style="max-width:100%">
+                <!-- start product_slider -->
+                <ul id="etalage">
+                    <li>
+                        <a href="optionallink.html">
+                            <img class="etalage_thumb_image" src="~/assets/Client/Product_Images/05abd6fb-48a4-40f5-9ae3-e05b531383ef-iphone-13-pro-review-33.jpg" />
+                            <img class="etalage_source_image" src="~/assets/Client/Product_Images/05abd6fb-48a4-40f5-9ae3-e05b531383ef-iphone-13-pro-review-33.jpg" />
+                        </a>
+                    </li>
+                    <li>
+                        <img class="etalage_thumb_image" src="~/assets/Client/Product_Images/05abd6fb-48a4-40f5-9ae3-e05b531383ef-iphone-13-pro-review-33.jpg" />
+                        <img class="etalage_source_image" src="~/assets/Client/Product_Images/05abd6fb-48a4-40f5-9ae3-e05b531383ef-iphone-13-pro-review-33.jpg" />
+                    </li>
+                    <li>
+                        <img class="etalage_thumb_image" src="~/assets/Client/Product_Images/05abd6fb-48a4-40f5-9ae3-e05b531383ef-iphone-13-pro-review-33.jpg" />
+                        <img class="etalage_source_image" src="~/assets/Client/Product_Images/05abd6fb-48a4-40f5-9ae3-e05b531383ef-iphone-13-pro-review-33.jpg" />
+                    </li>
+
+                    <li>
+                        <img class="etalage_thumb_image" src="~/assets/Client/Product_Images/05abd6fb-48a4-40f5-9ae3-e05b531383ef-iphone-13-pro-review-33.jpg" />
+                        <img class="etalage_source_image" src="~/assets/Client/Product_Images/05abd6fb-48a4-40f5-9ae3-e05b531383ef-iphone-13-pro-review-33.jpg" />
+                    </li>
+                </ul>
+
+
+                <!-- end product_slider -->
+            </div>
+            <div class="cont1 span_2_of_a1 col-md-5">
+                <h3 class="m_3">Iphone 13</h3>
+
+                <div class="price_single">
+                    <span class="reducedfrom">30.000.000đ</span>
+                    <span class="actual">30.000.000đ</span><a href="#">click for offer</a>
+                </div>
+                <ul class="options">
+                    <h4 class="m_9">Cấu Hình</h4>
+                    @*@foreach (var item in ViewBag.Config)
+        {
+            <li><button id="@item.MaCH" class="btn btn-outline-primary" style="border:none" onclick="getid(this.id)">@item.TenCH</button></li>
+
+        }*@
+                    <li><button id="1" class="btn btn-outline-primary" style="border:none" onclick="getid(this.id)">128GB</button></li>
+                    <li><button id="2" class="btn btn-outline-primary" style="border:none" onclick="getid(this.id)">256GB</button></li>
+                    <li><button id="3" class="btn btn-outline-primary" style="border:none" onclick="getid(this.id)">512GB</button></li>
+                    <div class="clearfix"></div>
+                </ul>
+                <div class="btn_form">
+                    <button id="but" class="btn btn-warning" onclick="noti()">Mua Ngay</button>
+                </div>
+
+                <p class="m_desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+                <div class="social_single">
+                    <ul>
+                        <li class="fb"><a href="#"><span> </span></a></li>
+                        <li class="tw"><a href="#"><span> </span></a></li>
+                        <li class="g_plus"><a href="#"><span> </span></a></li>
+                        <li class="rss"><a href="#"><span> </span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+
+            <h4>Có Thể Bạn Quan Tâm</h4>
+            <ul id="flexiselDemo3">
+
+                @* @foreach (var item in ViewBag.Related)
+        {
+            <li><img src=@Url.Content("~/assets/Client/Product_Images/"+item.HinhAnh1) /><div class="grid-flex"><a href=@Url.Action("Index","Products",new {id=item.MaSP })>@item.DonGia</a><p>@item.TenTat</p></div></li>
+        }*@
+                <li><img src="~/assets/Client/Product_Images/05abd6fb-48a4-40f5-9ae3-e05b531383ef-iphone-13-pro-review-33.jpg" /><div class="grid-flex"><a href="#">30.000.00đ</a><p>Iphone 12</p></div></li>
+                <li><img src="~/assets/Client/Product_Images/05abd6fb-48a4-40f5-9ae3-e05b531383ef-iphone-13-pro-review-33.jpg" /><div class="grid-flex"><a href="#">30.000.00đ</a><p>Iphone 12</p></div></li>
+                <li><img src="~/assets/Client/Product_Images/05abd6fb-48a4-40f5-9ae3-e05b531383ef-iphone-13-pro-review-33.jpg" /><div class="grid-flex"><a href="#">30.000.00đ</a><p>Iphone 12</p></div></li>
+                <li><img src="~/assets/Client/Product_Images/05abd6fb-48a4-40f5-9ae3-e05b531383ef-iphone-13-pro-review-33.jpg" /><div class="grid-flex"><a href="#">30.000.00đ</a><p>Iphone 12</p></div></li>
+                <li><img src="~/assets/Client/Product_Images/05abd6fb-48a4-40f5-9ae3-e05b531383ef-iphone-13-pro-review-33.jpg" /><div class="grid-flex"><a href="#">30.000.00đ</a><p>Iphone 12</p></div></li>
+                <li><img src="~/assets/Client/Product_Images/05abd6fb-48a4-40f5-9ae3-e05b531383ef-iphone-13-pro-review-33.jpg" /><div class="grid-flex"><a href="#">30.000.00đ</a><p>Iphone 12</p></div></li>
+                <li><img src="~/assets/Client/Product_Images/05abd6fb-48a4-40f5-9ae3-e05b531383ef-iphone-13-pro-review-33.jpg" /><div class="grid-flex"><a href="#">30.000.00đ</a><p>Iphone 12</p></div></li>
+                <li><img src="~/assets/Client/Product_Images/05abd6fb-48a4-40f5-9ae3-e05b531383ef-iphone-13-pro-review-33.jpg" /><div class="grid-flex"><a href="#">30.000.00đ</a><p>Iphone 12</p></div></li>
+            </ul>
+            <div class="toogle" style="width:100%">
+                <h3 class="m_3">Product Details</h3>
+                @{ Html.RenderAction("Config");}
+            </div>
+            <div class="toogle">
+                <h3 class="m_3">Product Reviews</h3>
+                @*<p class="m_text">@Html.Raw(Model.MoTa)</p>*@
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
