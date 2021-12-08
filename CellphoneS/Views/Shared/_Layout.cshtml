@@ -97,10 +97,10 @@
     <div class="header-top mb-3 p-2">
         <div class="wrap d-flex justify-content-between" style="height: 45px">
             <div class="logo m-0">
-                <a href=@Url.Action("Index","Home") style="color: rebeccapurple; font-size: 31px; text-decoration: none; padding: 3px; border: 3px solid linen; box-shadow: 5px 10px orange;"><span class="text-danger">N</span>ew <span class="text-danger">S</span>tore</a>
+                <a href=@Url.Action("Index","HomeClient") style="color: rebeccapurple; font-size: 31px; text-decoration: none; padding: 3px; border: 3px solid linen; box-shadow: 5px 10px orange;"><span class="text-danger">N</span>ew <span class="text-danger">S</span>tore</a>
             </div>
 
-            @using (Html.BeginForm("Search", "Home", FormMethod.Get, new { @class = "d-inline-flex" }))
+            @using (Html.BeginForm("Search", "HomeClient", FormMethod.Get, new { @class = "d-inline-flex" }))
             {
                 <input type="search" id="form1" class="form-control" name="TenSP" />
                 <button type="submit" class="btn btn-primary">Search</button>
@@ -110,7 +110,7 @@
                 <ul>
                     <li class="active">@Html.ActionLink("Sign up & Save", "Register", "Account")</li>
                     <li><a href="shop.html">Store Locator</a></li>
-                    <li>@Html.ActionLink("My Account", "Login", "Account")</li>
+                    <li>@Html.ActionLink("My Account", "Index", "Account")</li>
                     <li><a href=@Url.Action("Index","Cart")>CheckOut</a></li>
                 </ul>
             </div>

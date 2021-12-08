@@ -9,5 +9,6 @@ namespace CellphoneS.Common
     {
         public static string CART_SESSION = "CART_SESSION";
         public static string ADMIN_LOGIN = null;
+        public static string USER_LOGIN = null;
     }
 }

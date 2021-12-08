@@ -1,9 +1,8 @@
-﻿@*@model List<CellphoneS.Models.EF.SanPham>*@
-@using CellphoneS.Models.EF;
+﻿@using CellphoneS.Models.EF;
 @model IEnumerable<SanPham>
 <div class="content-bottom">
     <div class=" row">
-        @*@foreach (var item in Model.Take(4))
+        @foreach (var item in Model.Take(4))
         {
             <div class=" col-md-3 ">
                 <a href=@Url.Action("Index","Products",new {id=item.MaSP })>
@@ -28,98 +27,6 @@
                     </ul>
                 </a>
             </div>
-        }*@
-        <div class=" col-md-3 ">
-            <a href="#">
-                <div class="view view-fifth">
-                    <div class="top_box">
-                        <h3 class="m_1 text-center">Iphone 13</h3>
-                        <div class="grid_img">
-                            <div class="css3 img-fluid"><img src="~/assets/Client/Product_Images/55449e47-d865-4ba0-aca3-e80ebbf6a5aa.jpg" alt="" /></div>
-                            <div class="mask">
-                                <a class="info" href="">Chi Tiết</a>
-                            </div>
-                        </div>
-                        <div class="price">30.000.000 đ</div>
-                    </div>
-                </div>
-                <ul class="list" style="background:red">
-                    <li>
-                        <img src="images/plus.png" alt="" />
-                        <ul class="icon1 sub-icon1 profile_img">
-                        </ul>
-                    </li>
-                </ul>
-            </a>
-        </div>
-        <div class=" col-md-3 ">
-            <a href="#">
-                <div class="view view-fifth">
-                    <div class="top_box">
-                        <h3 class="m_1 text-center">Iphone 13</h3>
-                        <div class="grid_img">
-                            <div class="css3 img-fluid"><img src="~/assets/Client/Product_Images/55449e47-d865-4ba0-aca3-e80ebbf6a5aa.jpg" alt="" /></div>
-                            <div class="mask">
-                                <a class="info" href="">Chi Tiết</a>
-                            </div>
-                        </div>
-                        <div class="price">30.000.000 đ</div>
-                    </div>
-                </div>
-                <ul class="list" style="background:red">
-                    <li>
-                        <img src="images/plus.png" alt="" />
-                        <ul class="icon1 sub-icon1 profile_img">
-                        </ul>
-                    </li>
-                </ul>
-            </a>
-        </div>
-        <div class=" col-md-3 ">
-            <a href="#">
-                <div class="view view-fifth">
-                    <div class="top_box">
-                        <h3 class="m_1 text-center">Iphone 13</h3>
-                        <div class="grid_img">
-                            <div class="css3 img-fluid"><img src="~/assets/Client/Product_Images/55449e47-d865-4ba0-aca3-e80ebbf6a5aa.jpg" alt="" /></div>
-                            <div class="mask">
-                                <a class="info" href="">Chi Tiết</a>
-                            </div>
-                        </div>
-                        <div class="price">30.000.000 đ</div>
-                    </div>
-                </div>
-                <ul class="list" style="background:red">
-                    <li>
-                        <img src="images/plus.png" alt="" />
-                        <ul class="icon1 sub-icon1 profile_img">
-                        </ul>
-                    </li>
-                </ul>
-            </a>
-        </div>
-        <div class=" col-md-3 ">
-            <a href="#">
-                <div class="view view-fifth">
-                    <div class="top_box">
-                        <h3 class="m_1 text-center">Iphone 13</h3>
-                        <div class="grid_img">
-                            <div class="css3 img-fluid"><img src="~/assets/Client/Product_Images/55449e47-d865-4ba0-aca3-e80ebbf6a5aa.jpg" alt="" /></div>
-                            <div class="mask">
-                                <a class="info" href="">Chi Tiết</a>
-                            </div>
-                        </div>
-                        <div class="price">30.000.000 đ</div>
-                    </div>
-                </div>
-                <ul class="list" style="background:red">
-                    <li>
-                        <img src="images/plus.png" alt="" />
-                        <ul class="icon1 sub-icon1 profile_img">
-                        </ul>
-                    </li>
-                </ul>
-            </a>
-        </div>
+        }
     </div>
 </div>

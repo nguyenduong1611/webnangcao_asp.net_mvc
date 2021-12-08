@@ -13,7 +13,18 @@ namespace CellphoneS.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            ViewBag.Temp = "";
+            var slide = new SlideDAO().slide();
+            var tablet = new ProductDAO().Tablet();
+            ViewBag.Tablet = tablet;
+            var apple = new ProductDAO().Apple();
+            ViewBag.Apple = apple;
+            var sound = new ProductDAO().Sound();
+            ViewBag.Sound = sound;
+            var newproduct = new ProductDAO().New_Products();
+            ViewBag.NewProduct = newproduct;
+            var ads = new CommonDAO().ads();
+            return View(slide);
         }
         public ActionResult PromotionPartial()
         {
@@ -34,16 +45,19 @@ namespace CellphoneS.Controllers
             var footer = new CommonDAO().footer();
             return PartialView(footer);
         }
+
         public ActionResult ShowProducts(int MaLoaiSP, int MaNSX)
         {
             if (MaNSX == null)
             {
-                IEnumerable<SanPham> lst1 = new ProductDAO().showbycategories(MaLoaiSP);
                 ViewData["MaLoaiNSX"] = MaNSX;
+                IEnumerable<SanPham> lst1 = new ProductDAO().showbycategories(MaLoaiSP);
                 return View(lst1);
+
             }
             IEnumerable<SanPham> lst = new ProductDAO().showproducts(MaLoaiSP, MaNSX);
             return View(lst);
+
         }
         public ActionResult Search(string TenSP)
         {

@@ -47,7 +47,7 @@ namespace CellphoneS.Models.DAO
         }
         public IEnumerable<SanPham> Sound()
         {
-            return db.SanPham.Where(n => n.MaLoaiSP == 10 && n.TrangThai == true);
+            return db.SanPham.Where(n => n.MaLoaiSP == 2 && n.TrangThai == true);
         }
         public IEnumerable<SanPham> New_Products()
         {
