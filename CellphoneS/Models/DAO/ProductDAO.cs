@@ -58,9 +58,10 @@ namespace CellphoneS.Models.DAO
             var pro = db.SanPham.Find(id);
             return db.SanPham.Where(n => n.MaSP != id && n.MaLoaiSP == pro.MaLoaiSP).ToList();
         }
-        public IEnumerable<SanPham> showproducts(int MaLoaiSP, int MaNSX)
+        public IEnumerable<SanPham> showproducts(int MaLoaiSP, string MaNSX)
         {
-            return db.SanPham.Where(x => x.MaNSX == MaNSX && x.MaLoaiSP == MaLoaiSP);
+            int Mansx = Convert.ToInt32(MaNSX);
+            return db.SanPham.Where(x =>x.MaNSX == Mansx && x.MaLoaiSP == MaLoaiSP);
         }
         public IEnumerable<SanPham> showbycategories(int MaLoaiSP)
         {

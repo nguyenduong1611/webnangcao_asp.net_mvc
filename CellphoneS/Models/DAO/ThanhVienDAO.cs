@@ -12,9 +12,6 @@ namespace CellphoneS.Models.DAO
         {
             db = new StoreCellphoneS();
         }
-        public int login(ThanhVien tv)
-        {
-            
-        }
+        
     }
 }

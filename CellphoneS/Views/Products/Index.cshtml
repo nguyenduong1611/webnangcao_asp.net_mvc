@@ -12,7 +12,7 @@
         var temp = "";
         function getid(clicked_id) {
             temp = clicked_id;
-            var text = '<a id="re" class="btn btn-warning" href=@Url.Action("AddToCart","Cart",new {@id=Model.MaSP,@cfid="temp",@url=Request.Url.ToString() })>Mua Ngay</a>';
+            var text = '<a id="re" class="btn btn-warning" href=@Url.Action("AddToCart","Cart",new {@id=Model.MaSP,@cfid="temp"})>Mua Ngay</a>';
             text = text.replace("temp", temp)
             $('#but').replaceWith(text);
 

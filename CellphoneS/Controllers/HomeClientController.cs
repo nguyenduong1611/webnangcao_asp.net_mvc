@@ -46,7 +46,7 @@ namespace CellphoneS.Controllers
             return PartialView(footer);
         }
 
-        public ActionResult ShowProducts(int MaLoaiSP, int MaNSX)
+        public ActionResult ShowProducts(int MaLoaiSP, string MaNSX)
         {
             if (MaNSX == null)
             {
