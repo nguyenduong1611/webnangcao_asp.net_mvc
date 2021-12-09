@@ -135,7 +135,7 @@ namespace CellphoneS.Controllers
         public ActionResult Order(DonDatHang order, KhachHang customer)
         {
             if (Session["Cart"] == null)
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "HomeClient");
             KhachHang Customer = new KhachHang();
             if (Session["Customer"] == null)
             {
@@ -173,6 +173,24 @@ namespace CellphoneS.Controllers
             }
             Session["Cart"] = null;
             return RedirectToAction("Index");
+        }
+        public double Total()
+        {
+            List<CartItem> LstCart = Session["Cart"] as List<CartItem>;
+            if (LstCart == null)
+            {
+                return 0;
+            }
+            return LstCart.Sum(n => n.soluong);
+        }
+        public decimal TotalMoney()
+        {
+            List<CartItem> LstCart = Session["Cart"] as List<CartItem>;
+            if (LstCart == null)
+            {
+                return 0;
+            }
+            return LstCart.Sum(n => n.thanhtien);
         }
         public ActionResult Index()
         {

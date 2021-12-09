@@ -12,6 +12,15 @@ namespace CellphoneS.Models.DAO
         {
             db = new StoreCellphoneS();
         }
-        
+        public int login(ThanhVien tv)
+        {
+            /*return db.ThanhVien.Where(x => x.TaiKhoan == TK && x.MatKhau == MK).Count();*/
+            return db.ThanhVien.Where(x => x.TaiKhoan == tv.TaiKhoan && x.MatKhau == tv.MatKhau).Count();
+        }
+        public IEnumerable<ThanhVien> getdata(int mathanhvien)
+        {
+            return db.ThanhVien.Where(x => x.MaThanhVien == mathanhvien);
+        }
+
     }
 }

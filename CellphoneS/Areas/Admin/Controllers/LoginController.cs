@@ -36,6 +36,7 @@ namespace CellphoneS.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Login(string username, string pwd)
         {
+
             CellphoneS.Models.EF.Admin ad = db.Admin.SingleOrDefault(n => n.AdminID == username);
             int count = db.Admin.Count(n => n.AdminID == username && n.MatKhau == pwd);
             if (count != 0)

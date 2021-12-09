@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using CellphoneS.Models.EF;
-
+using CellphoneS.Models.DAO;
 namespace CellphoneS.Controllers
 {
     public class AccountController : Controller
@@ -17,34 +17,17 @@ namespace CellphoneS.Controllers
         {
             return View();
         }
-        public void SetAlert(string mess, string type)
-        {
-            TempData["AlertMessage"] = mess;
-            if (type == "seccess")
-            {
-                TempData["AlertType"] = "alert-success";
-            }
-            if (type == "error")
-            {
-                TempData["AlertType"] = "alert-danger";
-            }
-            if (type == "warning")
-            {
-                TempData["AlertType"] = "alert-warning";
-            }
-        }
+
         [HttpPost]
-        public ActionResult Login(string username, string pwd)
+        public ActionResult Index(ThanhVien tv)
         {
-            ThanhVien tv = db.ThanhVien.SingleOrDefault(n => n.TaiKhoan == username);
-            int count = db.ThanhVien.Count(n => n.TaiKhoan == username && n.MatKhau == pwd);
-            if (count != 0)
+            var count = new ThanhVienDAO().login(tv);
+            if (count > 0)
             {
-                Session.Add(Common.CommonSession.USER_LOGIN, tv);
+                Session["Customer"] = tv.MaThanhVien;
                 return RedirectToAction("Index", "HomeClient");
             }
-            SetAlert("Tài Khoản Hoặc Mật Khẩu Không Chính Xác", "error");
-            return RedirectToAction("Index");
+            return View();
         }
         public ActionResult Register()
         {
