@@ -55,5 +55,30 @@ namespace CellphoneS.Models.DAO
         {
             return db.DonDatHang.Where(n => n.TrangThai == true && n.DaThanhToan == true && n.HuyDon == false && n.TinhTrangGiaoHang == true);
         }
+        public int count(int month, int? year)
+        {
+
+            return db.DonDatHang.Count(n => n.NgayDat.Value.Month == month && n.NgayDat.Value.Year == year);
+        }
+        public int product(int month, int? year)
+        {
+            int ToTal = 0;
+            var order = db.DonDatHang.Where(n => n.NgayDat.Value.Month == month && n.NgayDat.Value.Year == year);
+            foreach (var item in order)
+            {
+                ToTal += int.Parse(item.ChiTietDonDatHang.Sum(n => n.SoLuong).Value.ToString());
+            }
+            return ToTal;
+        }
+        public decimal total(int month, int? year)
+        {
+            decimal ToTal = 0;
+            var order = db.DonDatHang.Where(n => n.NgayDat.Value.Month == month && n.NgayDat.Value.Year == year);
+            foreach (var item in order)
+            {
+                ToTal += decimal.Parse(item.ChiTietDonDatHang.Sum(n => n.SoLuong * n.DonGia).Value.ToString());
+            }
+            return ToTal;
+        }
     }
 }

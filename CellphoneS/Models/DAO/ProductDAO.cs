@@ -69,7 +69,6 @@ namespace CellphoneS.Models.DAO
         }
         public bool Insert(SanPham pro)
         {
-
             db.SanPham.Add(pro);
             db.SaveChanges();
             return true;

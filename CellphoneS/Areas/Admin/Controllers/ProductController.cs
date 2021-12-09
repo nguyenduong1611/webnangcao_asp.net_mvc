@@ -25,51 +25,29 @@ namespace CellphoneS.Areas.Admin.Controllers
             ViewBag.producer = prodao;
             var typedao = new ProductTypeDAO().type();
             ViewBag.type = typedao;
-
             return View();
         }
 
         [ValidateInput(false)]
         [HttpPost]
-        public ActionResult Create(SanPham pro, HttpPostedFileBase[] file)
+        public ActionResult Create(SanPham pro)
         {
-            for (int i = 0; i < file.Length; i++)
-            {
-                if (file[i] != null)
-                {
-                    string pic = System.IO.Path.GetFileName(file[i].FileName);
-                    string pic1 = System.IO.Path.GetFileName(file[0].FileName);
-                    string path = System.IO.Path.Combine(
-                                            Server.MapPath("~/assets/Client/Product_Images/"), pic);
-                    string pic2 = System.IO.Path.GetFileName(file[1].FileName);
-
-                    string pic3 = System.IO.Path.GetFileName(file[2].FileName);
-                    if (System.IO.File.Exists(path))
-                    {
-                        SetAlert("Hình Ảnh Đã Tồn Tại", "warning");
-                    }
-                    else
-                    {
-                        file[i].SaveAs(path);
-                        pro.HinhAnh1 = pic1;
-
-                        pro.HinhAnh2 = pic2;
-
-                        pro.HinhAnh3 = pic3;
-                    }
-                    // file is uploaded
-
-                }
-            }
-
-            var dao = new ProductDAO();
-            var result = dao.Insert(pro);
-            if (result)
+            StoreCellphoneS db = new StoreCellphoneS();
+            var f1 = Request.Files["file1"];
+            string path1 = Server.MapPath("~/assets/Client/Product_Images/" + f1.FileName);
+            pro.HinhAnh1 = f1.FileName;
+            var f2 = Request.Files["file2"];
+            string path2 = Server.MapPath("~/assets/Client/Product_Images/" + f2.FileName);
+            pro.HinhAnh2 = f2.FileName;
+            var f3 = Request.Files["file3"];
+            string path3 = Server.MapPath("~/assets/Client/Product_Images/" + f3.FileName);
+            pro.HinhAnh3 = f3.FileName;
+            var dao = new ProductDAO().Insert(pro);
+            if (dao)
             {
                 SetAlert("Thêm Sản Phẩm Thành Công", "success");
                 return RedirectToAction("Index");
             }
-            SetAlert("Thêm Sản Phẩm Thất Bại", "warning");
             return View();
         }
     }

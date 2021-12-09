@@ -33,6 +33,7 @@ namespace CellphoneS.Areas.Admin.Controllers
             var dao = new OrderDAO().Paid();
             return View(dao);
         }
+        [HttpPost]
         public JsonResult delivery(int id)
         {
             var result = new OrderDAO().delivery(id);
