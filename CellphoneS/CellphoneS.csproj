@@ -155,8 +155,11 @@
     <Compile Include="Models\DAO\CommonDAO.cs" />
     <Compile Include="Models\DAO\NewDAO.cs" />
     <Compile Include="Models\DAO\OrderDAO.cs" />
+    <Compile Include="Models\DAO\ProducerDAO.cs" />
     <Compile Include="Models\DAO\ProductDAO.cs" />
+    <Compile Include="Models\DAO\ProductTypeDAO.cs" />
     <Compile Include="Models\DAO\SlideDAO.cs" />
+    <Compile Include="Models\DAO\SupplierDAO.cs" />
     <Compile Include="Models\DAO\ThanhVienDAO.cs" />
     <Compile Include="Models\EF\Admin.cs" />
     <Compile Include="Models\EF\BinhLuan.cs" />
@@ -292,6 +295,7 @@
     <Content Include="assets\Client\Product_Images\ipadm1.jpg" />
     <Content Include="assets\Client\Product_Images\iphone-11-pro-max-space-select-2019-600x710-1-0daf5b72-449f-44c8-ba12-c8ff6d367920-02586c16-fcaa-45cc-9da6-f276140cd854.png" />
     <Content Include="assets\Client\Product_Images\iphone-13-pro-max-128gb-3d62acf4-63f0-4a74-83a1-875ec0019c57-645242f7-f1ac-483e-a1d5-c80ab058c5aa.png" />
+    <Content Include="assets\Client\Product_Images\iphone14.jpg" />
     <Content Include="assets\Client\Product_Images\JBLlive300.jpg" />
     <Content Include="assets\Client\Product_Images\LG-XBOOM-Go-PL5-Portable-Bluetooth-Speaker.jpg" />
     <Content Include="assets\Client\Product_Images\loa-bluetooth-sony-srs-xb43-ava-600x600.jpg" />
@@ -490,6 +494,10 @@
     <Content Include="Areas\Admin\Views\Import\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Payment\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Revenue\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Payment\Unpaid.cshtml" />
+    <Content Include="Areas\Admin\Views\Payment\Paid.cshtml" />
+    <Content Include="Areas\Admin\Views\Payment\success.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

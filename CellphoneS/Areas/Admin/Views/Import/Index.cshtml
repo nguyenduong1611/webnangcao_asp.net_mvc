@@ -5,7 +5,6 @@
     Layout = "~/Areas/Admin/Views/Shared/Admin_Layout.cshtml";
 }
 
-<h2>Index</h2>
 @using (Html.BeginForm("import", "Import", FormMethod.Post))
 {
     <div class="form-horizontal">
@@ -17,11 +16,10 @@
             @Html.LabelFor(model => model.MaNCC, "MaNCC", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <select name="MaNCC" class="form-control">
-                   @* @foreach (var item in ViewBag.sup)
+                    @foreach (var item in ViewBag.sup)
                     {
                         <option value="@item.MaNCC">@item.TenNCC</option>
-                    }*@
-                    ádjhvuhas
+                    }
                 </select>
 
                 @Html.ValidationMessageFor(model => model.MaNCC, "", new { @class = "text-danger" })
@@ -43,11 +41,10 @@
         <tr class="trAppend" style="display:none">
             <td>
                 <select class="dlpro" name="">
-                   @* @foreach (var item in LstSanPham)
+                    @foreach (var item in LstSanPham)
                     {
                         <option value="@item.MaSP">@item.TenSP</option>
-                    }*@
-                    akjsdhuw
+                    }
                 </select>
             </td>
             <td>
@@ -69,7 +66,6 @@
     </table>
     <input type="button" class="btn btn-info" value="+" id="btnAdd" style="cursor:pointer" />
     <input type="submit" class="btn btn-success" id="btnImport" />
-    <p>hahaa</p>
 }
 <script>
     $(document).ready(function () {

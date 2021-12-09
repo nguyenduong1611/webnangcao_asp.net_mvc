@@ -27,21 +27,18 @@
         <div class="tab-pane active" id="home">
             <div class="row border g-0 rounded shadow-sm">
                 <table>
-                    @*@{Html.RenderAction("Unpaid", "Payment");}*@
-                     chưa thanh toán
+                    @{Html.RenderAction("Unpaid", "Payment");}
                 </table>
             </div>
         </div>
         <div class="tab-pane" id="profile">
             <div class="row border g-0 rounded shadow-sm">
-                @*@{Html.RenderAction("Paid", "Payment");}*@
-                thanh toán
+                @{Html.RenderAction("Paid", "Payment");}
             </div>
         </div>
         <div class="tab-pane" id="contact">
             <div class="row border g-0 rounded shadow-sm">
-                @*@{Html.RenderAction("success", "Payment");}*@
-                hoàn thành
+                @{Html.RenderAction("success", "Payment");}
             </div>
         </div>
     </div>

@@ -67,5 +67,12 @@ namespace CellphoneS.Models.DAO
         {
             return db.SanPham.Where(x => x.MaLoaiSP == MaLoaiSP);
         }
+        public bool Insert(SanPham pro)
+        {
+
+            db.SanPham.Add(pro);
+            db.SaveChanges();
+            return true;
+        }
     }
 }
