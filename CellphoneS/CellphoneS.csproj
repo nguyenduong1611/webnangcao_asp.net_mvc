@@ -499,6 +499,7 @@
     <Content Include="Areas\Admin\Views\Payment\Unpaid.cshtml" />
     <Content Include="Areas\Admin\Views\Payment\Paid.cshtml" />
     <Content Include="Areas\Admin\Views\Payment\success.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

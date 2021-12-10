@@ -69,9 +69,54 @@ namespace CellphoneS.Models.DAO
         }
         public bool Insert(SanPham pro)
         {
-            db.SanPham.Add(pro);
+            /*db.SanPham.Add(pro);
             db.SaveChanges();
-            return true;
+            return true;*/
+            try
+            {
+                var sp = db.SanPham.Add(pro);
+                sp.HinhAnh3 = pro.HinhAnh3;
+                sp.HinhAnh2 = pro.HinhAnh2;
+                sp.HinhAnh1 = pro.HinhAnh1;
+                sp.DonGia = pro.DonGia;
+                sp.TenTat = pro.TenTat;
+                sp.TrangThai = pro.TrangThai;
+                sp.Moi = pro.Moi;
+                sp.MoTa = pro.MoTa;
+                sp.NgayCapNhat = DateTime.Now;
+                db.SaveChanges();
+                return true;
+
+
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool update(SanPham entity)
+        {
+            try
+            {
+                var sp = db.SanPham.Find(entity.MaSP);
+                sp.HinhAnh3 = entity.HinhAnh3;
+                sp.HinhAnh2 = entity.HinhAnh2;
+                sp.HinhAnh1 = entity.HinhAnh1;
+                sp.DonGia = entity.DonGia;
+                sp.TenTat = entity.TenTat;
+                sp.TrangThai = entity.TrangThai;
+                sp.Moi = entity.Moi;
+                sp.MoTa = entity.MoTa;
+                sp.NgayCapNhat = DateTime.Now;
+                db.SaveChanges();
+                return true;
+
+
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

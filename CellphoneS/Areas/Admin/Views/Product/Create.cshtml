@@ -51,15 +51,14 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MoTa, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.MoTa, new { htmlAttributes = new { @class = "form-control", @id = "mytextarea" } })
-                @Html.ValidationMessageFor(model => model.MoTa, "", new { @class = "text-danger" })
+                <textarea id="" name="MoTa" style="width: 1295px; height: 100px;"></textarea>
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.SoLuongTon, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.SoLuongTon, new { htmlAttributes = new { @type = "number", @class = "form-control" } })
+                @Html.EditorFor(model => model.SoLuongTon, new { htmlAttributes = new { @type = "number", @class = "form-control"} })
                 @Html.ValidationMessageFor(model => model.SoLuongTon, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -139,7 +138,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.HinhAnh1, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <input type="file" , name="file1" />
+                <input type="file" , name="file1" value="NULL"/>
                 @*@Html.ValidationMessageFor(model => model.HinhAnh1, "", new { @class = "text-danger" })*@
             </div>
         </div>
@@ -147,7 +146,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.HinhAnh2, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <input type="file" , name="file2" />
+                <input type="file" , name="file2" value="NULL" />
                 @*@Html.ValidationMessageFor(model => model.HinhAnh2, "", new { @class = "text-danger" })*@
             </div>
         </div>
@@ -155,7 +154,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.HinhAnh3, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <input type="file" , name="file3" />
+                <input type="file" , name="file3" value="NULL"/>
                 @*@Html.ValidationMessageFor(model => model.HinhAnh3, "", new { @class = "text-danger" })*@
             </div>
         </div>
