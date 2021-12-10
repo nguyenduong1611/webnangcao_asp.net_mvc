@@ -18,6 +18,7 @@ namespace CellphoneS.Models.EF
         [Key]
         public int MaKH { get; set; }
 
+        [Display(Name = "Tên khách hàng")]
         [StringLength(50)]
         public string TenKH { get; set; }
 

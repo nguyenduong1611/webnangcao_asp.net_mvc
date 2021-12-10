@@ -1,4 +1,4 @@
-namespace CellphoneS.Models.EF
+﻿namespace CellphoneS.Models.EF
 {
     using System;
     using System.Collections.Generic;
@@ -15,19 +15,23 @@ namespace CellphoneS.Models.EF
             PhieuNhap = new HashSet<PhieuNhap>();
             SanPham = new HashSet<SanPham>();
         }
-
+        [Display(Name = "Mã nhà cung cấp")]
         [Key]
         public int MaNCC { get; set; }
 
+        [Display(Name = "Tên nhà cung cấp")]
         [StringLength(50)]
         public string TenNCC { get; set; }
 
+        [Display(Name = "Địa chỉ")]
         [StringLength(50)]
         public string DiaChi { get; set; }
 
+        [Display(Name = "Email")]
         [StringLength(50)]
         public string Email { get; set; }
 
+        [Display(Name = "Số điện thoại")]
         [StringLength(15)]
         public string SoDienThoai { get; set; }
 

@@ -13,7 +13,7 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MaNCC, "MaNCC", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.MaNCC,"Mã nhà cung cấp", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <select name="MaNCC" class="form-control">
                     @foreach (var item in ViewBag.sup)
@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.NgayNhap, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.NgayNhap,"Ngày nhập", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.NgayNhap, new { htmlAttributes = new { @type = "date", @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.NgayNhap, "", new { @class = "text-danger" })

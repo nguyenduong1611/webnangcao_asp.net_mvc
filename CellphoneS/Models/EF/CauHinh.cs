@@ -1,4 +1,4 @@
-namespace CellphoneS.Models.EF
+﻿namespace CellphoneS.Models.EF
 {
     using System;
     using System.Collections.Generic;
@@ -12,9 +12,11 @@ namespace CellphoneS.Models.EF
         [Key]
         public int MaCH { get; set; }
 
+        [Display(Name = "Màn hình")]
         [StringLength(50)]
         public string ManHinh { get; set; }
 
+        [Display(Name = "Hệ điều hành")]
         [StringLength(50)]
         public string HeDieuHanh { get; set; }
 

@@ -158,6 +158,7 @@
     <Compile Include="Models\DAO\ProducerDAO.cs" />
     <Compile Include="Models\DAO\ProductDAO.cs" />
     <Compile Include="Models\DAO\ProductTypeDAO.cs" />
+    <Compile Include="Models\DAO\ReceiptDAO.cs" />
     <Compile Include="Models\DAO\RevenueDAO.cs" />
     <Compile Include="Models\DAO\SlideDAO.cs" />
     <Compile Include="Models\DAO\SupplierDAO.cs" />
